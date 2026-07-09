@@ -1,0 +1,14 @@
+# Classes compiladas
+bin/
+out/
+*.class
+
+# Arquivos temporários de compilação
+sources.txt
+
+# IDE
+.idea/
+*.iml
+.classpath
+.project
+.settings/
