@@ -58,32 +58,62 @@ pooJava/
 
 ## Como Compilar e Executar
 
-### Linux / macOS / Git Bash
+> **Projeto IFRN:** os testes devem ser feitos no **terminal**, compilando todo o projeto antes de executar. Não execute apenas o `Main.java` pelo botão "Run" sem compilar — isso causa o erro `GeradorId cannot be resolved`.
+
+### Forma mais fácil (Windows — duplo clique ou terminal)
+
+```cmd
+compilar.bat
+executar.bat
+```
+
+O `executar.bat` compila automaticamente se as classes ainda não existirem.
+
+### Windows (PowerShell)
 
 ```bash
 mkdir -p bin
 javac -d bin $(find src -name "*.java")
-java -cp bin com.estoque.Main
+java -Dfile.encoding=UTF-8 -cp bin com.estoque.Main
 ```
 
-### Windows (PowerShell)
+### Linux / macOS / Git Bash
+
+```bash
+mkdir -p bin
+javac -encoding UTF-8 -d bin $(find src -name "*.java")
+java -Dfile.encoding=UTF-8 -cp bin com.estoque.Main
+```
+
+### Windows (CMD manual)
+
+```cmd
+mkdir bin
+dir /s /b src\*.java > sources.txt
+javac -encoding UTF-8 -d bin @sources.txt
+del sources.txt
+java -Dfile.encoding=UTF-8 -cp bin com.estoque.Main
+```
+
+### Windows (PowerShell manual)
 
 ```powershell
 New-Item -ItemType Directory -Force -Path bin
 Get-ChildItem -Path src -Recurse -Filter *.java | ForEach-Object { $_.FullName } | ForEach-Object { javac -d bin $_ }
 # Ou compile tudo de uma vez:
 $files = Get-ChildItem -Path src -Recurse -Filter *.java | ForEach-Object { $_.FullName }
-javac -d bin $files
-java -cp bin com.estoque.Main
+javac -encoding UTF-8 -d bin $files
+java -Dfile.encoding=UTF-8 -cp bin com.estoque.Main
 ```
 
-### Windows (CMD)
+### Windows (CMD manual — alternativa)
 
 ```cmd
 mkdir bin
 dir /s /b src\*.java > sources.txt
-javac -d bin @sources.txt
-java -cp bin com.estoque.Main
+javac -encoding UTF-8 -d bin @sources.txt
+del sources.txt
+java -Dfile.encoding=UTF-8 -cp bin com.estoque.Main
 ```
 
 **Requisito:** JDK 17 ou superior (usa `record` e pattern matching `instanceof`).
