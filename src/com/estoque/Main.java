@@ -18,6 +18,8 @@ import com.estoque.service.EstoqueService;
 import com.estoque.service.RelatorioService;
 import com.estoque.util.GeradorId;
 
+import java.io.PrintStream;
+import java.nio.charset.StandardCharsets;
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 import java.util.InputMismatchException;
@@ -50,9 +52,21 @@ public class Main {
      * @param args argumentos da linha de comando (não utilizados)
      */
     public static void main(String[] args) {
+        configurarConsoleUtf8();
         Main app = new Main();
         app.carregarDadosExemplo();
         app.executar();
+    }
+
+    /**
+     * Configura a saída do console para UTF-8, evitando problemas de acentuação no Windows.
+     */
+    private static void configurarConsoleUtf8() {
+        try {
+            System.setOut(new PrintStream(System.out, true, StandardCharsets.UTF_8));
+        } catch (Exception ignored) {
+            // Mantém saída padrão se a configuração falhar
+        }
     }
 
     /**
