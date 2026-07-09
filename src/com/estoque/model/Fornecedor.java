@@ -69,8 +69,6 @@ public class Fornecedor implements Identificavel, Validavel {
     }
 
     /**
-     * Valida CNPJ e e-mail utilizando a classe {@link Validador}.
-     *
      * @throws ValidacaoException se CNPJ, e-mail ou nome forem inválidos
      */
     @Override

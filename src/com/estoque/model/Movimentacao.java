@@ -73,9 +73,6 @@ public abstract class Movimentacao implements Identificavel {
     public abstract String getTipoDescricao();
 
     /**
-     * Processa a movimentação aplicando a alteração no estoque do produto informado.
-     * Implementações concretas definem se somam ou subtraem quantidade.
-     *
      * @param produto produto alvo da movimentação
      * @throws EstoqueInsuficienteException se a saída exceder o estoque disponível
      */
@@ -83,7 +80,6 @@ public abstract class Movimentacao implements Identificavel {
 
     /**
      * Valida dados comuns da movimentação.
-     *
      * @throws ValidacaoException se quantidade ou data forem inválidas
      */
     public void validar() throws ValidacaoException {

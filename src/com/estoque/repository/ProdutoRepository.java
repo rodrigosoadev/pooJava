@@ -15,7 +15,6 @@ public class ProdutoRepository extends Repositorio<Produto> {
     }
 
     /**
-     * {@inheritDoc}
      * Retorna produtos ordenados alfabeticamente por nome.
      */
     @Override

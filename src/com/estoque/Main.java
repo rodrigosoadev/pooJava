@@ -84,14 +84,14 @@ public class Main {
                     "Tech Supply Ltda",
                     "11.222.333/0001-81",
                     "contato@techsupply.com.br",
-                    "(11) 98765-4321"
+                    "(84) 98765-4321"
             );
             Fornecedor for2 = new Fornecedor(
                     GeradorId.gerarIdFornecedor(),
                     "Distribuidora Alimentos SA",
                     "00.000.000/0001-91",
                     "vendas@distribuidora.com.br",
-                    "(21) 3333-4444"
+                    "(84) 3333-4444"
             );
             fornecedorRepository.cadastrar(for1);
             fornecedorRepository.cadastrar(for2);

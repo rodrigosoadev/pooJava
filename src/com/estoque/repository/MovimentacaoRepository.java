@@ -16,7 +16,6 @@ public class MovimentacaoRepository extends Repositorio<Movimentacao> {
     }
 
     /**
-     * {@inheritDoc}
      * Retorna movimentações ordenadas por data (mais recentes primeiro).
      */
     @Override

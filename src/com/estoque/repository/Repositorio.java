@@ -13,10 +13,9 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Repositório genérico em memória baseado em {@link HashMap}.
- * Implementa operações CRUD definidas por {@link Cadastravel}.
+ * Repositório genérico em memória baseado em HashMap
  *
- * @param <T> tipo da entidade, deve implementar {@link Identificavel}
+ * @param <T> tipo da entidade, deve implementar Identificavel
  */
 public abstract class Repositorio<T extends Identificavel> implements Cadastravel<T> {
 
@@ -28,7 +27,7 @@ public abstract class Repositorio<T extends Identificavel> implements Cadastrave
     }
 
     /**
-     * Valida a entidade antes de persistir, quando ela implementa {@link Validavel}.
+     * Valida a entidade antes de persistir, quando ela implementa Validavel
      *
      * @param entidade entidade a validar
      * @throws ValidacaoException se a validação falhar

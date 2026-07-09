@@ -15,7 +15,6 @@ public class FornecedorRepository extends Repositorio<Fornecedor> {
     }
 
     /**
-     * {@inheritDoc}
      * Retorna fornecedores ordenados alfabeticamente por nome.
      */
     @Override

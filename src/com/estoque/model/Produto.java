@@ -8,8 +8,7 @@ import com.estoque.interfaces.Validavel;
 import com.estoque.util.Validador;
 
 /**
- * Representa um produto controlado pelo estoque.
- * Implementa alertas de estoque mínimo e validação de preço e quantidades.
+ alertas de estoque mínimo e validação de preço e quantidades.
  */
 public class Produto implements Identificavel, Alertavel, Validavel {
 
@@ -122,17 +121,13 @@ public class Produto implements Identificavel, Alertavel, Validavel {
     }
 
     /**
-     * {@inheritDoc}
-     * Retorna {@code true} quando a quantidade em estoque é menor ou igual ao estoque mínimo.
+ quando a quantidade em estoque é menor ou igual ao estoque mínimo.
      */
     @Override
     public boolean necessitaAlerta() {
         return quantidadeEstoque <= estoqueMinimo;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public String gerarAlerta() {
         return String.format(

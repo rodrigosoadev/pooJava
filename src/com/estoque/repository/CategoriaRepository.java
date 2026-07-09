@@ -14,10 +14,6 @@ public class CategoriaRepository extends Repositorio<Categoria> {
         super("Categoria");
     }
 
-    /**
-     * {@inheritDoc}
-     * Retorna categorias ordenadas alfabeticamente por nome.
-     */
     @Override
     public List<Categoria> listarTodos() {
         return super.listarTodos().stream()
